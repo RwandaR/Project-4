@@ -10,3 +10,9 @@ function validate() {
     }
 }
 button.addEventListener('click', validate);
+
+const toDoTask = new TaskManager();
+toDoTask.addTask('clean' , 'Rwanda', '6/23/2023');
+console.log(toDoTask);
+
+
