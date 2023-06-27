@@ -41,8 +41,8 @@ class TaskManager {
         let taskHtml = createTaskHtml(this.tasks[this.currentId - 1]);
 
         taskHtmlList.push(taskHtml);
-        taskHtml.localeCompare(task => {
-            let li = document.createElement ('li');
+        taskHtmlList.map(task => {
+            let li = document.createElement('li');
             li.innerHtml = task;
             taskList.appendChild(li);
         });
