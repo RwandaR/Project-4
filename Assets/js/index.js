@@ -1,15 +1,19 @@
 
 //Task Name Form Input
-const newTaskNameInput = document.querySelector('#taskName');
-const newTaskDescriptionInput = document.querySelector('#taskDescription');
-const newAssignedTo = document.querySelector('#assignedTo');
-const newDueDate = document.querySelector('#dueDate');
+let newTaskNameInput = document.getElementById('#taskName');
+let newTaskDescriptionInput = document.getElementById('#taskDescription');
+let newAssignedTo = document.getElementById('#assignedTo');
+let newDueDate = document.getElementById('#dueDate');
+let taskList = document.getElementById('#task-list');
+const taskButton = document.getElementById('#taskButton');
 
-const taskButton = document.querySelector('#taskButton');
+
 function validate(event) {
     event.preventDefault();
     const createTaskName = newTaskNameInput.value;
     console.log(createTaskName);
+   
+   
     if (createTaskName == '') {
         alert('Please insert a valid task name');
     }
@@ -29,9 +33,11 @@ function validate(event) {
         alert('Please select a due date for this task');
     }
 }
-taskButton.addEventListener('click', validate);
 
 const toDoTask = new TaskManager();
+taskButton.addEventListener("click", validate);
+
+
 toDoTask.addTask('clean' , 'Rwanda', '6/23/2023');
 console.log(toDoTask);
 
