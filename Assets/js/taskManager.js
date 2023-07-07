@@ -1,17 +1,35 @@
 //let taskList = document.getElementById('#task-list');
 const createTaskHtml = (object) => {
 const html = `
-        <div class= "form-group">
-            <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-primary mb-2 done-button">${object.currentId}</div>
-                <h5 class ="card-title'>${object.taskName}</h5>
-                <h6 class ="card-subtitle mb-2 text-danger'>${object.dueDate}</h5>
-                <p class="card-text">${object.description}</p>
-                <h6 class ="card-subtitle mb-2 text-danger">${object.assignedTo} </h6>
-            </div>
+    <form>
+        <div class="form-group">
+            <label for="Task Name">${object.taskName}</label>
+            <input type="text" class="form-control" id="taskName" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="Task Description">${object.description}</label>
+            <textarea class="form-control" id="taskDescription" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Assigned To">${object.assignedTo}</label>
+            <select multiple class="required form-control" id="assignedTo">
+                <option>Emelly</option>
+                <option>Eric</option>
+                <option>Rwanda</option>
+                <option>Halle</option>
+            </select>
+        </div>
+        <div class ="form-group">
+            <form action="">
+                <label for="DueDate">${object.dueDate}</label>
+                <input type="date" name="dueDate" id="dueDate">
+            </form>
+        </div>
+    </form>
         `;
     return html
 };
+    
 
 
 
@@ -28,7 +46,7 @@ class TaskManager {
         const taskObj = {
             id: this.currentId,
             taskName,
-            description ,
+            description,
             assignedTo,
             dueDate,
             status: 'TODO' 
@@ -38,15 +56,21 @@ class TaskManager {
 
       render() {
         let taskHtmlList = [];
-        let taskHtml = createTaskHtml(this.tasks[this.currentId - 1]);
-
+        const date = new Date(dueDate);
+        const formattedDate = "2023-07-05";
+        for (let addTask = 0; addtask < 5; addTask++);
+        const taskHtml = createTaskHtml(taskName, newTaskDescriptionInput, newAssignedTo, formattedDate);
         taskHtmlList.push(taskHtml);
-        taskHtmlList.map(task => {
-            let li = document.createElement('li');
-            li.innerHtml = task;
-            taskList.appendChild(li);
-        });
-        document.getElementById('task-form').reset();
+        
+        // let taskHtml = createTaskHtml(this.tasks[this.currentId - 1]);
+
+        // taskHtmlList.push(taskHtml);
+        // taskHtmlList.map(task => {
+        //     let li = document.createElement('li');
+        //     li.innerHtml = task;
+        //     taskList.appendChild(li);
+        // });
+        // document.getElementById('task-form').reset();
     }
 
 

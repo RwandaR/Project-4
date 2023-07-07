@@ -43,4 +43,6 @@ taskButtonNew.addEventListener("click", validate);
 toDoTask.addTask();
 console.log(toDoTask);
 
+// const taskHtml = createTaskHtml(taskName, newTaskDescriptionInput, newAssignedTo, newDueDate);
+// console.log(taskHtml);
 
