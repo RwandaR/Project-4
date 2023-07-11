@@ -5,7 +5,6 @@ let newTaskNameInput = document.getElementById('taskName');
 let newTaskDescriptionInput = document.getElementById('taskDescription');
 let newAssignedTo = document.getElementById('assignedTo');
 let newDueDate = document.getElementById('dueDate');
-let taskList = document.getElementById('task-list');
 const taskButtonNew = document.getElementById('taskButton');
 const toDoTask = new taskManager();
 
@@ -38,18 +37,13 @@ function validate(event) {
         toDoTask.addTask(newTaskNameInput.value, newTaskDescriptionInput.value, newAssignedTo.value, newDueDate.value)
         toDoTask.render();
         
-     // <-------previous code --------------->
-         //toDoTask.addTask(createTaskName, createDescription, createAssignedTo, createDueDate)
-         //toDoTask.render();
-     // <---------previous code --------------->
-
     }
 }
 
 taskButtonNew.addEventListener("click", validate);
 
-toDoTask.addTask();
-console.log(toDoTask);
+// toDoTask.addTask();
+// console.log(toDoTask);
 
 
 // <---------previous code ----->
