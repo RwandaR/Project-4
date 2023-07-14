@@ -7,7 +7,11 @@ let newAssignedTo = document.getElementById('assignedTo');
 let newDueDate = document.getElementById('dueDate');
 const taskButtonNew = document.getElementById('taskButton');
 const toDoTask = new taskManager();
+const tasksList = document.getElementById('taskListCard')
+const taskListButton = document.getElementsByClassName('markAsDone');
 
+
+console.log(tasksList);
 
 
 function validate(event) {
@@ -42,12 +46,18 @@ function validate(event) {
 
 taskButtonNew.addEventListener("click", validate);
 
-// toDoTask.addTask();
-// console.log(toDoTask);
+tasksList.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (event.target.classList.contains('markAsDone')){
+        tasksList.style.backgroundColor = "green";
+        console.log(tasksList);
+    }
 
+    // const changeCardColor = tasksList.value;
+    // console.log(changeCardColor);
+    // if (changeCardColor == true) {
+    //     element.style.backgroundColor = "green";
+    // }
+});
 
-// <---------previous code ----->
-    // const taskHtml = createTaskHtml(taskName, newTaskDescriptionInput, newAssignedTo, newDueDate);
-    // console.log(taskHtml);
-// <---------previous code ----->
 

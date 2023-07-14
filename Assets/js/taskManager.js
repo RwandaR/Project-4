@@ -5,16 +5,15 @@ const taskList = document.getElementById('tasks-cards')
 
 const createTaskHtml = (obj) => {
     const html = `
-            <div class="card" style="width: 18rem;">
+            <div class="card text-bg-dark" style="width: 18rem;">
                 <div class="card-body">
                  <h5 class="card-title">${obj.taskName}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${obj.status}</h6>
                     <p class="card-text">${obj.description}</p>
                     <p class="card-text">${obj.assignedTo}</p>
                     <p class="card-text">${obj.dueDate}</p>
-                    <a href="#" class="card-link">Mark As Done</a>
-                     <a href="#" class="card-link">Edit</a>
-                     <a href="#" class="card-link">Delete</a>
+                    <a href="#" class="card-link markAsDone">Mark As Done</a>
+
                 </div>
             </div>
 
@@ -55,18 +54,14 @@ class taskManager {
             let taskHtml = createTaskHtml(this.tasks[i]);
             tasksHtmlList.push(taskHtml)
         }
-        let html = tasksHtmlList.join('\n')
-        taskList.innerHTML = html
-
-
-
-    
-
+       let html = tasksHtmlList.join('\n')
+       taskList.innerHTML = html
     }
 
     taskTitle(){
       console.log(`TO DO: ${this.tasks}`);
     }
 }
+
 
    
