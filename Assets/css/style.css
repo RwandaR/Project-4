@@ -4,6 +4,19 @@
     background-color: white;
 }
 
+#taskListCard {
+    display: none;
+}
+h1.manager {
+    margin-left: 125px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+ }
+
+.d-flex {
+    margin-right: 20px;
+}
+ 
 nav{
     width: 100vw !important;
 }
@@ -30,11 +43,6 @@ nav{
 background-color: white !important;
 }
 
-
-.side-bar{
-    color: black !important;
-    font-size: 25px;
-}
 
 #project{
     width: 100%;
